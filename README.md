@@ -1,11 +1,16 @@
 English | [中文](README_CN.md)
 
 # This is a Modified Version
+
 This project is based on the original `https://github.com/huiyadanli/PasteEx`
-New features added to the original version: When pasting text, it extracts content from the text for processing, and supports operation from the command line. There's still a bug in the software that hasn't been fixed - the position of the options is not quite right, and the names of these options are not displayed.
+New features added to the original version: When pasting text, it extracts content from the text for processing.&#x20;
+
+There's still a bug in the software that hasn't been fixed - the position of the options is not quite right, and the names of these options are not displayed.
+
 Fully compliant with the GPLv3 open source license, original copyright belongs to the original author
 
 # PasteEx
+
 [![](https://img.shields.io/badge/platform-windows-lightgrey.svg?style=flat-square)](https://www.microsoft.com/download/details.aspx?id=30653)
 [![Github All Releases](https://img.shields.io/github/downloads/huiyadanli/PasteEx/total.svg?style=flat-square)](https://github.com/huiyadanli/PasteEx/releases)
 [![Build status](https://img.shields.io/appveyor/ci/huiyadanli/pasteex.svg?style=flat-square)](https://ci.appveyor.com/project/huiyadanli/pasteex)
@@ -17,11 +22,11 @@ Fully compliant with the GPLv3 open source license, original copyright belongs t
 
 Paste the contents of the clipboard into files.
 
-* Custom text extension rules.
-* Automatically identify the image file extension, and support the transparent PNG and dynamic GIF image.
-* Faster and more convenient [Monitor Mode](https://github.com/huiyadanli/PasteEx/wiki#%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F).
+- Custom text extension rules.
+- Automatically identify the image file extension, and support the transparent PNG and dynamic GIF image.
+- Faster and more convenient [Monitor Mode](https://github.com/huiyadanli/PasteEx/wiki#%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F).
 
-More functions and usage see [:blue_book:document](https://github.com/huiyadanli/PasteEx/wiki).
+More functions and usage see [:blue\_book:document](https://github.com/huiyadanli/PasteEx/wiki).
 
 [:zap:Download v1.1.9.1 (latest version)](https://github.com/huiyadanli/PasteEx/releases/download/v1.1.9.1/PasteEx.v1.1.9.1.zip)
 
@@ -30,23 +35,26 @@ If you use [Scoop](https://github.com/lukesampson/scoop), you can install PasteE
 `scoop install 'https://raw.githubusercontent.com/acdzh/zpt/master/bucket/pasteex.json'`
 
 ## Screenshot
+
 ![Screenshot](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot_win11_en.png)
 
 ## Usage
 
 Requirements:
 
-* Windows 7 or higher
-* [.NET Framework 4.5.2](https://www.microsoft.com/en-us/download/details.aspx?id=42642) or higher
+- Windows 7 or higher
+- [.NET Framework 4.5.2](https://www.microsoft.com/en-us/download/details.aspx?id=42642) or higher
 
 Download decompression and run `PasteEx.exe` . There will be UAC prompts when adding context menus.
 
 How to uninstall: It is a portable software. Just remove the context menu on the settings page and delete it.
 
 ## Thanks
+
 [PasteIntoFiles](https://github.com/EslaMx7/PasteIntoFiles)
 
 [PortableSettingsProvider](https://github.com/crdx/PortableSettingsProvider)
 
 ## License
+
 [GPLv3](https://github.com/huiyadanli/PasteEx/blob/master/LICENSE)
