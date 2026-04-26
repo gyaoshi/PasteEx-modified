@@ -1,6 +1,7 @@
-﻿using PasteEx.Core.Processor;
+using PasteEx.Core.Processor;
 using PasteEx.Forms;
 using PasteEx.Forms.Hotkey;
+using PasteEx.Library;
 using PasteEx.Util;
 using System;
 using System.Diagnostics;
@@ -170,7 +171,7 @@ namespace PasteEx.Core
             ManualResetEvent allDone = new ManualResetEvent(false);
 
             ClipboardData quickPasteData = new ClipboardData();
-            quickPasteData.SaveCompleted += () => allDone.Set();
+            quickPasteData.SaveCompleted += (sender, e) => allDone.Set();
 
             string[] extensions = quickPasteData.Analyze();
             if (!string.IsNullOrEmpty(fileName))
@@ -258,11 +259,11 @@ namespace PasteEx.Core
 
         public static string GetActiveExplorerLocation()
         {
-            int handle = (int)Library.User32.GetForegroundWindow();
+            IntPtr handle = Library.User32.GetForegroundWindow();
 
             const int maxChars = 256;
             StringBuilder className = new StringBuilder(maxChars);
-            if (Library.User32.GetClassName(handle, className, maxChars) > 0)
+            if (Library.User32.GetClassName((int)handle, className, maxChars) > 0)
             {
                 string cName = className.ToString();
                 if (cName == "Progman" || cName == "WorkerW")
@@ -272,18 +273,18 @@ namespace PasteEx.Core
                 }
                 else
                 {
-                    // desktop is not active, find explorer
-                    foreach (SHDocVw.InternetExplorer window in new SHDocVw.ShellWindows())
+                    // desktop is not active, find explorer by window title
+                    StringBuilder windowText = new StringBuilder(256);
+                    Library.User32.GetWindowText(handle, windowText, windowText.Capacity);
+                    string title = windowText.ToString();
+                    
+                    // Check if this is an Explorer window
+                    if (title.Contains(" - 文件夹") || title.Contains(" - File Explorer"))
                     {
-                        if (window.HWND == handle)
-                        {
-                            string filename = Path.GetFileNameWithoutExtension(window.FullName).ToLower();
-                            if (filename.ToLowerInvariant() == "explorer")
-                            {
-                                Uri uri = new Uri(window.LocationURL);
-                                return uri.LocalPath;
-                            }
-                        }
+                        // For Explorer windows, we can try to get the path from the title
+                        // Remove the " - 文件夹" or " - File Explorer" suffix
+                        string path = title.Replace(" - 文件夹", "").Replace(" - File Explorer", "");
+                        return path;
                     }
                 }
             }

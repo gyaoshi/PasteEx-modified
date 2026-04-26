@@ -1,4 +1,4 @@
-﻿using PasteEx.Library;
+using PasteEx.Library;
 using PasteEx.Util;
 using System;
 using System.Diagnostics;
@@ -36,7 +36,8 @@ namespace PasteEx.Core.History
         {
             // Copy Source
             IntPtr hwnd = User32.GetClipboardOwner();
-            User32.GetWindowThreadProcessId(hwnd, out uint processId);
+            uint processId;
+            User32.GetWindowThreadProcessId(hwnd, out processId);
             Process proc = Process.GetProcessById(Convert.ToInt32(processId));
             CopySourceName = proc.ProcessName;
 

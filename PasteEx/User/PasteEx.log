@@ -1,0 +1,39 @@
+2026-04-26 16:39:48 - [ERROR] - System.Runtime.InteropServices.ExternalException (0x80004005): GDI+ 中发生一般性错误。
+   在 System.Drawing.Image.Save(String filename, ImageCodecInfo encoder, EncoderParameters encoderParams)
+   在 System.Drawing.Image.Save(String filename, ImageFormat format)
+   在 PasteEx.Core.Processor.ImageProcessor.SaveAs(String path, String extension) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Core\Processor\ImageProcessor.cs:行号 112
+   在 PasteEx.Core.ClipboardData.Save(String path, String extension) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Core\ClipboardData.cs:行号 120
+   在 PasteEx.Core.ModeController.QuickPasteEx(String location, String fileName, Boolean forceOverWrite) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Core\ModeController.cs:行号 233
+   在 PasteEx.Util.CLIHelper.Execute() 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Util\CLIHelper.cs:行号 151
+   在 PasteEx.Program.Main(String[] args) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Program.cs:行号 36
+
+2026-04-26 16:40:58 - [ERROR] - System.Runtime.InteropServices.ExternalException (0x80004005): GDI+ 中发生一般性错误。
+   在 System.Drawing.Image.Save(String filename, ImageCodecInfo encoder, EncoderParameters encoderParams)
+   在 System.Drawing.Image.Save(String filename, ImageFormat format)
+   在 PasteEx.Core.Processor.ImageProcessor.SaveAs(String path, String extension) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Core\Processor\ImageProcessor.cs:行号 112
+   在 PasteEx.Core.ClipboardData.Save(String path, String extension) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Core\ClipboardData.cs:行号 120
+   在 PasteEx.Core.ModeController.QuickPasteEx(String location, String fileName, Boolean forceOverWrite) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Core\ModeController.cs:行号 233
+   在 PasteEx.Util.CLIHelper.Execute() 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Util\CLIHelper.cs:行号 151
+   在 PasteEx.Program.Main(String[] args) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Program.cs:行号 36
+
+2026-04-26 16:41:19 - [ERROR] - System.Runtime.InteropServices.ExternalException (0x80004005): GDI+ 中发生一般性错误。
+   在 System.Drawing.Image.Save(String filename, ImageCodecInfo encoder, EncoderParameters encoderParams)
+   在 System.Drawing.Image.Save(String filename, ImageFormat format)
+   在 PasteEx.Core.Processor.ImageProcessor.SaveAs(String path, String extension) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Core\Processor\ImageProcessor.cs:行号 112
+   在 PasteEx.Core.ClipboardData.Save(String path, String extension) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Core\ClipboardData.cs:行号 120
+   在 PasteEx.Core.ModeController.QuickPasteEx(String location, String fileName, Boolean forceOverWrite) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Core\ModeController.cs:行号 233
+   在 PasteEx.Util.CLIHelper.Execute() 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Util\CLIHelper.cs:行号 151
+   在 PasteEx.Program.Main(String[] args) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Program.cs:行号 36
+
+2026-04-26 16:41:47 - [ERROR] - System.Runtime.InteropServices.ExternalException (0x80004005): GDI+ 中发生一般性错误。
+   在 System.Drawing.Image.Save(String filename, ImageCodecInfo encoder, EncoderParameters encoderParams)
+   在 System.Drawing.Image.Save(String filename, ImageFormat format)
+   在 PasteEx.Core.Processor.ImageProcessor.SaveAs(String path, String extension) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Core\Processor\ImageProcessor.cs:行号 112
+   在 PasteEx.Core.ClipboardData.Save(String path, String extension) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Core\ClipboardData.cs:行号 120
+   在 PasteEx.Core.ModeController.QuickPasteEx(String location, String fileName, Boolean forceOverWrite) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Core\ModeController.cs:行号 233
+   在 PasteEx.Util.CLIHelper.Execute() 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Util\CLIHelper.cs:行号 151
+   在 PasteEx.Program.Main(String[] args) 位置 d:\project\PasteEx\PasteEx-test\PasteEx\Program.cs:行号 36
+
+2026-04-26 19:13:43 - [WARNING] - 第1次请求获得的数据并非期望数据
+URL:https://huiyadanli.coding.net/p/PasteEx/d/PasteEx/git/raw/master/PasteEx.Deploy/latest.json
+

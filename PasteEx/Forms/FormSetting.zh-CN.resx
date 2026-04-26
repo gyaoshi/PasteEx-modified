@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -132,6 +132,24 @@
   </data>
   <data name="lblFileNamePattern.Text" xml:space="preserve">
     <value>规则:</value>
+  </data>
+  <data name="chkTextPasteByContent.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkTextPasteByContent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 80</value>
+  </data>
+  <data name="chkTextPasteByContent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 18</value>
+  </data>
+  <data name="chkTextPasteByContent.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="chkTextPasteByContent.Text" xml:space="preserve">
+    <value>文本粘贴以内容命名</value>
+  </data>
+  <data name="chkTextPasteByContent.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
     <value>文件命名</value>

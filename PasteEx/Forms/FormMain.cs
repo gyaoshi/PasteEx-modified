@@ -1,4 +1,4 @@
-﻿using PasteEx.Core;
+using PasteEx.Core;
 using PasteEx.Util;
 using System;
 using System.IO;
@@ -74,7 +74,7 @@ namespace PasteEx.Forms
         private void FormMain_Load(object sender, EventArgs e)
         {
             data = new ClipboardData();
-            data.SaveCompleted += () => Application.Exit(); // exit when save completed
+            data.SaveCompleted += (s, args) => Application.Exit(); // exit when save completed
             string[] extensions = data.Analyze();
             cboExtension.Items.AddRange(extensions);
             if (extensions.Length > 0)

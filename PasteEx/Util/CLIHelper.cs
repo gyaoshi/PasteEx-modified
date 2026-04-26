@@ -1,11 +1,10 @@
-﻿using PasteEx.Core;
+using PasteEx.Core;
 using PasteEx.Forms;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
-using static PasteEx.Util.RightMenu;
 
 namespace PasteEx.Util
 {
@@ -215,26 +214,26 @@ namespace PasteEx.Util
         }
 
         public static string GenerateCmdReg(
-            ShiftSetting shift = ShiftSetting.False,
-            QuickSetting quick = QuickSetting.False)
+            RightMenu.ShiftSetting shift = RightMenu.ShiftSetting.False,
+            RightMenu.QuickSetting quick = RightMenu.QuickSetting.False)
         {
             string cmd = CLIParams.REG + " ";
 
-            if (quick == QuickSetting.True)
+            if (quick == RightMenu.QuickSetting.True)
                 cmd += CLIParams.QUICK;
             else
                 cmd += CLIParams.NORMAL;
 
-            if (shift == ShiftSetting.True)
+            if (shift == RightMenu.ShiftSetting.True)
                 cmd += " " + CLIParams.SHIFT;
 
             return cmd;
         }
 
-        public static string GenerateCmdUnReg(QuickSetting quick = QuickSetting.False)
+        public static string GenerateCmdUnReg(RightMenu.QuickSetting quick = RightMenu.QuickSetting.False)
         {
             string cmd = CLIParams.UNREG + " ";
-            if (quick == QuickSetting.True)
+            if (quick == RightMenu.QuickSetting.True)
                 cmd += CLIParams.QUICK;
             else
                 cmd += CLIParams.NORMAL;

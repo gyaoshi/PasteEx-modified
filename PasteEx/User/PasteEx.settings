@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <globalSettings>
+    <setting name="autoExtRule">
+    </setting>
+    <setting name="autoImageToFileEnabled">True</setting>
+    <setting name="ApplicationFilterState">Exclude</setting>
+    <setting name="textPasteByContentEnabled">True</setting>
+    <setting name="monitorAutoSavePath">
+    </setting>
+    <setting name="lastBootTime">
+    </setting>
+    <setting name="pasteHotkey">Ctrl + Alt + X</setting>
+    <setting name="guid">
+    </setting>
+    <setting name="firstTipFlag">False</setting>
+    <setting name="fileNamePattern">Clip_$HHmmss$</setting>
+    <setting name="ApplicationFilterExclude">
+    </setting>
+    <setting name="monitorAutoSaveEnabled">False</setting>
+    <setting name="DefaultStartupMonitorModeEnabled">False</setting>
+    <setting name="autoExtSwitch">False</setting>
+    <setting name="language">1</setting>
+    <setting name="ApplicationFilterInclude">
+    </setting>
+  </globalSettings>
+</settings>

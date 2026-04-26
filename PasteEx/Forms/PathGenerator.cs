@@ -121,9 +121,43 @@ namespace PasteEx.Forms
         /// <returns></returns>
         public static string GenerateFileName(string folder, string extension)
         {
+            string defaultRelativePath;
 
+            if (Properties.Settings.Default.textPasteByContentEnabled && IsTextExtension(extension))
+            {
+                string textContent = GetClipboardTextContent();
+                if (!string.IsNullOrEmpty(textContent))
+                {
+                    defaultRelativePath = GenerateTextContentBasedName(textContent);
+                }
+                else
+                {
+                    defaultRelativePath = GenerateDefaultRelativePathFromPattern();
+                }
+            }
+            else
+            {
+                defaultRelativePath = GenerateDefaultRelativePathFromPattern();
+            }
+
+            if (!File.Exists(Path.Combine(folder, defaultRelativePath + "." + extension)))
+            {
+                return defaultRelativePath;
+            }
+            for (int i = 0; i <= 233; i++)
+            {
+                string relativePath = defaultRelativePath + " (" + i + ")";
+                if (!File.Exists(Path.Combine(folder, relativePath + "." + extension)))
+                {
+                    return relativePath;
+                }
+            }
+            return "Default";
+        }
+
+        private static string GenerateDefaultRelativePathFromPattern()
+        {
             string relativePathPattern = Properties.Settings.Default.fileNamePattern;
-            // Use file name pattern
             string defaultRelativePath = null;
             try
             {
@@ -136,22 +170,90 @@ namespace PasteEx.Forms
             {
                 defaultRelativePath = GenerateDefaultRelativePath(defaultRelativePathPattern);
             }
+            return defaultRelativePath;
+        }
 
-            // Generate file name
-            if (!File.Exists(Path.Combine(folder, defaultRelativePath + "." + extension)))
+        private static string GetClipboardTextContent()
+        {
+            try
             {
-                return defaultRelativePath;
-            }
-            //If file already exists
-            for (int i = 0; i <= 233; i++)
-            {
-                string relativePath = defaultRelativePath + " (" + i + ")";
-                if (!File.Exists(Path.Combine(folder, defaultRelativePath + "." + extension)))
+                if (System.Windows.Forms.Clipboard.ContainsText(System.Windows.Forms.TextDataFormat.UnicodeText))
                 {
-                    return relativePath;
+                    return System.Windows.Forms.Clipboard.GetText(System.Windows.Forms.TextDataFormat.UnicodeText);
+                }
+                if (System.Windows.Forms.Clipboard.ContainsText(System.Windows.Forms.TextDataFormat.Text))
+                {
+                    return System.Windows.Forms.Clipboard.GetText(System.Windows.Forms.TextDataFormat.Text);
                 }
             }
-            return "Default";
+            catch
+            {
+            }
+            return null;
+        }
+
+        private static bool IsTextExtension(string extension)
+        {
+            string[] textExtensions = { "txt", "html", "htm", "xml", "json", "css", "js", "md", "csv" };
+            return textExtensions.Contains(extension.ToLower());
+        }
+
+        private static string GenerateTextContentBasedName(string textContent)
+        {
+            const int maxChineseCharCount = 15;
+            StringBuilder sb = new StringBuilder();
+
+            int chineseCharCount = 0;
+            foreach (char c in textContent)
+            {
+                if (chineseCharCount >= maxChineseCharCount)
+                {
+                    break;
+                }
+
+                if (c >= 0x4E00 && c <= 0x9FA5)
+                {
+                    sb.Append(c);
+                    chineseCharCount++;
+                }
+                else if (char.IsWhiteSpace(c) || char.IsPunctuation(c) || char.IsSymbol(c))
+                {
+                    if (sb.Length > 0 && !IsInvalidFileNameChar(c))
+                    {
+                        sb.Append(c);
+                    }
+                }
+                else if (char.IsLetterOrDigit(c))
+                {
+                    sb.Append(c);
+                }
+
+                if (sb.Length >= 50)
+                {
+                    break;
+                }
+            }
+
+            string result = sb.ToString().Trim();
+            if (string.IsNullOrEmpty(result))
+            {
+                return GenerateDefaultRelativePath(defaultRelativePathPattern);
+            }
+
+            result = result.TrimEnd('.', ' ', '-', '_');
+
+            foreach (char invalidChar in Path.GetInvalidFileNameChars())
+            {
+                result = result.Replace(invalidChar.ToString(), "");
+            }
+
+            return string.IsNullOrEmpty(result) ? GenerateDefaultRelativePath(defaultRelativePathPattern) : result;
+        }
+
+        private static bool IsInvalidFileNameChar(char c)
+        {
+            char[] invalidChars = { '<', '>', ':', '"', '/', '\\', '|', '?', '*' };
+            return invalidChars.Contains(c);
         }
 
         /// <summary>

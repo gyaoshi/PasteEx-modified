@@ -1,4 +1,4 @@
-﻿
+
 using System;
 
 namespace PasteEx.Core.Processor
@@ -19,7 +19,10 @@ namespace PasteEx.Core.Processor
         public event AsyncCompletedEventHandler SaveAsFileCompleted;
         protected virtual void OnSaveAsFileCompleted()
         {
-            SaveAsFileCompleted?.Invoke();
+            if (SaveAsFileCompleted != null)
+            {
+                SaveAsFileCompleted();
+            }
         }
 
         public abstract void Reload();

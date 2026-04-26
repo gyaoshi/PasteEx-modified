@@ -1,4 +1,4 @@
-﻿using PasteEx.Library;
+using PasteEx.Library;
 using System;
 using System.Threading;
 using System.Windows.Forms;
@@ -28,7 +28,10 @@ namespace PasteEx.Core
 
         private static void OnClipboardChangeEvent(object sender)
         {
-            OnClipboardChange?.Invoke(sender);
+            if (OnClipboardChange != null)
+            {
+                OnClipboardChange(sender);
+            }
         }
 
         /// <summary>
@@ -94,7 +97,8 @@ namespace PasteEx.Core
                 if (m.Msg == WM_CLIPBOARDUPDATE)
                 {
                     IntPtr hwnd = User32.GetClipboardOwner();
-                    User32.GetWindowThreadProcessId(hwnd, out uint processId);
+                    uint processId;
+                    User32.GetWindowThreadProcessId(hwnd, out processId);
 
 
                     ClipChanged(processId);
@@ -103,7 +107,10 @@ namespace PasteEx.Core
 
             private void ClipChanged(object processId)
             {
-                OnClipboardChange?.Invoke(processId);
+                if (OnClipboardChange != null)
+                {
+                    OnClipboardChange(processId);
+                }
             }
         }
     }

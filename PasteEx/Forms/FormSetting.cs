@@ -1,4 +1,4 @@
-﻿using PasteEx.Core;
+using PasteEx.Core;
 using PasteEx.Util;
 using System;
 using System.Collections.Generic;
@@ -46,6 +46,7 @@ namespace PasteEx.Forms
 
             // File Name Pattern
             txtFileNamePattern.Text = Properties.Settings.Default.fileNamePattern;
+            chkTextPasteByContent.Checked = Properties.Settings.Default.textPasteByContentEnabled;
 
             // Auto Save Path
             chkAutoSave.Checked = Properties.Settings.Default.monitorAutoSaveEnabled;
@@ -78,6 +79,7 @@ namespace PasteEx.Forms
             Properties.Settings.Default.pasteHotkey = txtQuickPasteExHotkey.Text;
 
             Properties.Settings.Default.fileNamePattern = txtFileNamePattern.Text;
+            Properties.Settings.Default.textPasteByContentEnabled = chkTextPasteByContent.Checked;
 
             Properties.Settings.Default.monitorAutoSaveEnabled = chkAutoSave.Checked;
             Properties.Settings.Default.monitorAutoSavePath = txtAutoSaveFolderPath.Text;

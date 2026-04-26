@@ -1,4 +1,4 @@
-﻿using PasteEx.Library;
+using PasteEx.Library;
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -124,14 +124,22 @@ namespace PasteEx.Forms.Hotkey
     /// </summary>
     public class KeyPressedEventArgs : EventArgs
     {
-        public ModifierKeys Modifier { get; }
+        private readonly ModifierKeys modifier;
+        public ModifierKeys Modifier
+        {
+            get { return modifier; }
+        }
 
-        public Keys Key { get; }
+        private readonly Keys key;
+        public Keys Key
+        {
+            get { return key; }
+        }
 
         internal KeyPressedEventArgs(ModifierKeys modifier, Keys key)
         {
-            Modifier = modifier;
-            Key = key;
+            this.modifier = modifier;
+            this.key = key;
         }
     }
 

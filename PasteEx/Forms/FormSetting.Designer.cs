@@ -1,4 +1,4 @@
-﻿namespace PasteEx.Forms
+namespace PasteEx.Forms
 {
     partial class FormSetting
     {
@@ -38,6 +38,7 @@
             this.txtFileNamePattern = new System.Windows.Forms.TextBox();
             this.lblFileNamePreview = new System.Windows.Forms.Label();
             this.lblFileNamePattern = new System.Windows.Forms.Label();
+            this.chkTextPasteByContent = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.chkDefaultStartupMonitorMode = new System.Windows.Forms.CheckBox();
             this.cboLanguage = new System.Windows.Forms.ComboBox();
@@ -130,10 +131,11 @@
             // 
             resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Controls.Add(this.picHelpFileNamePattern);
-            this.groupBox6.Controls.Add(this.lblPreviewResult);
+            this.groupBox6.Controls.Add(this.lblFileNamePattern);
             this.groupBox6.Controls.Add(this.txtFileNamePattern);
             this.groupBox6.Controls.Add(this.lblFileNamePreview);
-            this.groupBox6.Controls.Add(this.lblFileNamePattern);
+            this.groupBox6.Controls.Add(this.lblPreviewResult);
+            this.groupBox6.Controls.Add(this.chkTextPasteByContent);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
             // 
@@ -166,6 +168,12 @@
             // 
             resources.ApplyResources(this.lblFileNamePattern, "lblFileNamePattern");
             this.lblFileNamePattern.Name = "lblFileNamePattern";
+            // 
+            // chkTextPasteByContent
+            // 
+            resources.ApplyResources(this.chkTextPasteByContent, "chkTextPasteByContent");
+            this.chkTextPasteByContent.Name = "chkTextPasteByContent";
+            this.chkTextPasteByContent.UseVisualStyleBackColor = true;
             // 
             // groupBox4
             // 
@@ -578,6 +586,7 @@
         private System.Windows.Forms.Label lblFileNamePreview;
         private System.Windows.Forms.Label lblFileNamePattern;
         private System.Windows.Forms.Label lblPreviewResult;
+        private System.Windows.Forms.CheckBox chkTextPasteByContent;
         private System.Windows.Forms.Label lblQuickPasteExHotkeyValid;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button btnOpenAutoSavePath;

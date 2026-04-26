@@ -1,11 +1,11 @@
-﻿using PasteEx.Core.History;
+using PasteEx.Core.History;
 using PasteEx.Core.Processor;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static PasteEx.Core.Processor.BaseProcessor;
 
 namespace PasteEx.Core
 {
@@ -22,7 +22,10 @@ namespace PasteEx.Core
         public event AsyncCompletedEventHandler SaveCompleted;
         protected virtual void OnSaveCompleted()
         {
-            SaveCompleted?.Invoke();
+            if (SaveCompleted != null)
+            {
+                SaveCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(null, false, null));
+            }
         }
 
         public ClipboardData()

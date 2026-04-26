@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 
@@ -21,8 +21,10 @@ namespace PasteEx.Core.Processor
             if (Data.FromClipboard.GetDataPresent(DataFormats.FileDrop, false))
             {
                 List<string> extensions = new List<string>();
-                if (Data.FromClipboard.GetData(DataFormats.FileDrop) is string[] filePaths)
+                object data = Data.FromClipboard.GetData(DataFormats.FileDrop);
+                if (data is string[])
                 {
+                    string[] filePaths = (string[])data;
                     if (filePaths.Length == 1)
                     {
                         if (!string.IsNullOrEmpty(filePaths[0]) && File.Exists(filePaths[0]))

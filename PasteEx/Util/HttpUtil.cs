@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -8,7 +8,11 @@ namespace PasteEx.Util
     public class HttpUtil
     {
 
-        public static HttpClient Client { get; } = new HttpClient();
+        private static readonly HttpClient client = new HttpClient();
+        public static HttpClient Client
+        {
+            get { return client; }
+        }
 
         static HttpUtil()
         {
