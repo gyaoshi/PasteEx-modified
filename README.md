@@ -5,9 +5,10 @@ English | [中文](README_CN.md)
 This project is based on the original `https://github.com/huiyadanli/PasteEx`
 New features added to the original version: When pasting text, it extracts content from the text for processing.&#x20;
 
-There's still a bug in the software that hasn't been fixed - the position of the options is not quite right, and the names of these options are not displayed.
-
 Fully compliant with the GPLv3 open source license, original copyright belongs to the original author
+
+---------------------------------------------------------------
+
 
 # PasteEx
 

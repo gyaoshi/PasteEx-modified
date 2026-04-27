@@ -152,16 +152,22 @@
     <value>True</value>
   </data>
   <data name="chkTextPasteByContent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 80</value>
+    <value>21, 21</value>
   </data>
   <data name="chkTextPasteByContent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 18</value>
+    <value>180, 18</value>
   </data>
   <data name="chkTextPasteByContent.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
   <data name="chkTextPasteByContent.Text" xml:space="preserve">
     <value>文本粘貼以內容命名</value>
+  </data>
+  <data name="chkTextPasteByContent.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="groupBox9.Text" xml:space="preserve">
+    <value>New</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>界面</value>

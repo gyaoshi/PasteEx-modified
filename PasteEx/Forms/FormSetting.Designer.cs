@@ -40,6 +40,7 @@ namespace PasteEx.Forms
             this.lblFileNamePattern = new System.Windows.Forms.Label();
             this.chkTextPasteByContent = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.chkDefaultStartupMonitorMode = new System.Windows.Forms.CheckBox();
             this.cboLanguage = new System.Windows.Forms.ComboBox();
             this.labelLanguage = new System.Windows.Forms.Label();
@@ -123,6 +124,7 @@ namespace PasteEx.Forms
             this.tabPageNomal.Controls.Add(this.groupBox4);
             this.tabPageNomal.Controls.Add(this.groupBox3);
             this.tabPageNomal.Controls.Add(this.groupBox1);
+            this.tabPageNomal.Controls.Add(this.groupBox9);
             resources.ApplyResources(this.tabPageNomal, "tabPageNomal");
             this.tabPageNomal.Name = "tabPageNomal";
             this.tabPageNomal.UseVisualStyleBackColor = true;
@@ -135,7 +137,6 @@ namespace PasteEx.Forms
             this.groupBox6.Controls.Add(this.txtFileNamePattern);
             this.groupBox6.Controls.Add(this.lblFileNamePreview);
             this.groupBox6.Controls.Add(this.lblPreviewResult);
-            this.groupBox6.Controls.Add(this.chkTextPasteByContent);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
             // 
@@ -183,6 +184,13 @@ namespace PasteEx.Forms
             this.groupBox4.Controls.Add(this.labelLanguage);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
+            // 
+            // groupBox9
+            // 
+            resources.ApplyResources(this.groupBox9, "groupBox9");
+            this.groupBox9.Controls.Add(this.chkTextPasteByContent);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.TabStop = false;
             // 
             // chkDefaultStartupMonitorMode
             // 
@@ -603,5 +611,6 @@ namespace PasteEx.Forms
         private System.Windows.Forms.PictureBox picHelpAppFilter;
         private System.Windows.Forms.CheckBox chkDefaultStartupMonitorMode;
         private System.Windows.Forms.CheckBox chkQuickPasteExHotkeyWinKey;
+        private System.Windows.Forms.GroupBox groupBox9;
     }
 }
